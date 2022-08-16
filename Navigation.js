@@ -10,17 +10,30 @@ function Navigation() {
         <NavigationContainer>
             <Stack.Navigator 
             initialRouteName={Home}
-            screenOptions={{
-                headerShown: false
-            }}
+            // screenOptions={{
+            //     headerShown: false
+            // }}
             >
-                <Stack.Screen 
-                    name="Home"
-                    component={Home}
-                />
+            <Stack.Screen 
+                name="Home"
+                component={Home}
+                options={
+                    {
+                        headerShown: false
+                    }
+                }
+            />
             <Stack.Screen 
                 name="Room"
                 component={MeetingRoom}
+                options={{
+                    title: "Start a new meeting",
+                    headerStyle: {
+                        backgroundColor: "#1c1c1c",
+                        shadowOpacity: 0
+                    },
+                    headerTintColor: "white"
+                }}
             />
             </Stack.Navigator>
         </NavigationContainer>
